@@ -1,0 +1,140 @@
+.HeadMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-bottom: 30px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(24, 24, 24);
+}
+.HeadMenuSubButton{
+    display: flex;
+    flex-direction: row;
+}
+
+.HeaderMenuSubLogoAndText{
+    display: flex;
+    flex-direction: row;
+}
+.HeadMenuSubTextBot{
+    display: flex;
+    align-items: center;
+}
+.EachTextButtom{
+    display: flex;
+    margin-right: 8px;
+}
+.SizeSvg{
+    display: flex;
+    align-items: center;
+}
+.ButtomUpAndLog{
+    margin-left: 10px;
+}
+.ButtomUpAndLogBroder{
+    display: flex;
+    flex-direction: row;
+}
+.ContainerIm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 75%;
+    
+}
+.ContainerImNd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.AllBody2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.BgImage {
+  background-repeat: no-repeat;       /* ไม่ให้ภาพซ้ำ */
+  background-size: cover;            /* ขยายภาพให้เต็มพื้นที่ (อาจตัดส่วนเกิน) */
+  background-position: center center; /* จัดภาพให้อยู่ตรงกลาง */
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px rgb(106, 0, 255);
+    transition: box-shadow 0.3s ease;
+}
+.BgImage:hover{
+    box-shadow:
+    0 0 20px  rgb(106, 0, 255),
+    0 0 40px  rgb(106, 0, 255);
+    transition: box-shadow 0.3s ease;
+}
+.HeaderInBg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.AboutUs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10vh;
+}
+
+.AboutUsHowWork{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0vh;
+}
+
+.ButtomComp{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-top: 50px;
+    margin-right: 5%;
+}
+
+.ButtomCompSub{
+    border: 1px solid ;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.ButtomCompSub:hover {
+  transform: scale(1.09); /* ขยาย 10% */
+  transition: transform 0.5s ease; /* ทำให้มันขยายแบบนุ่มนวล */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.UnderComp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.GetStartButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
