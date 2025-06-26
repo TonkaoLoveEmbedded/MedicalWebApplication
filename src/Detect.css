@@ -1,0 +1,161 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.AllPage{
+    
+      /* relative */
+  display: flex;                   /* flex */
+  flex-direction: column;          /* flex-col */
+  height: 100vh;                    /* size-full → height */
+  min-height: 100vh;               /* min-h-screen */
+  overflow-x: hidden;              /* overflow-x-hidden */
+
+
+}
+.AllLayout {
+  flex: 1;             /* กินพื้นที่ที่เหลือใน AllPage */
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;    /* สำคัญมาก เพื่อกัน scroll หลักหลุดผ่านมา */
+}
+.AllComponent{
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+    
+
+}
+.AllLayer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+.LeftComp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 220px;
+    height: 100vh;
+    padding-left: 50px;
+}
+
+.LeftCompLogout{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.ItemLeftBar{
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+.EachIconAndText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 18px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 8px;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.5s ease;
+}
+
+.EachIconAndText.active {
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  color: #181818;
+}
+.EachIconAndText:hover{
+    transform: scale(1.09);
+}
+
+
+.AllComponent > .result-scroll-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+.result-scroll-wrapper {
+  flex: 1;           /* กินพื้นที่ที่เหลือถัดจาก sidebar */
+  overflow-y: auto;  /* เปิด scroll เฉพาะตรงนี้ */
+}
+
+
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5vw;
+  flex: 1;
+}
+
+.result-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+}
+
+.result-title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  min-width: 18rem;
+  letter-spacing: -0.01em;
+}
+
+.result-image-wrapper {
+  display: flex;
+  width: 90%;
+  max-width: 960px;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 5px;
+}
+
+.result-image-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 0.5rem;
+  aspect-ratio: 3 / 2;
+  gap: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  .result-image-container {
+    gap: 0.5rem;
+  }
+}
+
+.result-image {
+  flex: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+.result-measurements {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  column-gap: 1.5rem;
+}
+
+.result-summary {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.25rem 1rem 0.75rem 1rem;
+}

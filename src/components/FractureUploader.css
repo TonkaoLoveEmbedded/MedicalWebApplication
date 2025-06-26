@@ -1,0 +1,123 @@
+.uploader-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Noto Sans', sans-serif;
+}
+
+.uploader-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.site-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  
+}
+
+.header-center {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  
+  text-decoration: none;
+}
+
+.login-button {
+  min-width: 5.25rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  
+  font-size: 0.875rem;
+  font-weight: bold;
+  
+  cursor: pointer;
+}
+
+.upload-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 2.5rem;
+}
+
+.upload-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.upload-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  
+}
+
+.upload-description {
+  font-size: 1rem;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border: 2px dashed #dbe0e6;
+  border-radius: 0.5rem;
+  padding: 3.5rem 1.5rem;
+}
+
+.upload-text-primary {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: center;
+  max-width: 30rem;
+  
+}
+
+.upload-text-secondary {
+  font-size: 0.875rem;
+  
+}
+
+.select-button {
+  min-width: 5.25rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  background-color: #f0f2f5;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #111418;
+  cursor: pointer;
+}
+
+.upload-terms {
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: underline;
+}

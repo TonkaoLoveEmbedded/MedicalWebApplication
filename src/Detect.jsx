@@ -1,79 +1,99 @@
-import React from "react";
-import './BoneHome.css'
+import './Detect.css'
+import { useState } from 'react';
+
+
+import ResultContainer from "./components/ResultContainer.jsx";
+import FractureUploader from "./components/FractureUploader.jsx";
+
 
 export default function Detect() {
+  const [activeItem, setActiveItem] = useState("Dashboard");
   return (
     <div
-      className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+      className="AllPage"
       style={{ fontFamily: 'Inter, "Noto Sans", sans-serif' }}
     >
-      <div className="layout-container flex h-full grow flex-col">
-        <div className="gap-1 px-6 flex flex-1 justify-center py-5">
+      <div className="AllLayout">
+        <div className="AllComponent">
           {/* ───────────────── Sidebar ───────────────── */}
           <div className="layout-content-container flex flex-col w-80">
-            <div className="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
+            <div className="LeftComp">
               {/* Header + Menu */}
-              <div className="flex flex-col gap-4">
-                <h1 className="text-[#111418] text-base font-medium leading-normal">Fracture Finder</h1>
+              <div className="LeftCompNoLogout">
+                <h2 className="text-[#111418] text-base font-medium leading-normal">Fracture Finder</h2>
 
-                <div className="flex flex-col gap-2">
-                  {/* Dashboard */}
-                  <MenuItem icon={HouseIcon} label="Dashboard" />
-                  {/* New Scan */}
-                  <MenuItem icon={PlusIcon} label="New Scan" />
-                  {/* History (active) */}
-                  <MenuItem icon={ClockIcon} label="History" active />
-                  {/* Settings */}
-                  <MenuItem icon={GearIcon} label="Settings" />
-                  {/* Help */}
-                  <MenuItem icon={QuestionIcon} label="Help" />
+                <div className="ItemLeftBar">
+                  
+                  <MenuItem 
+                    icon={HouseIcon}
+                    label="Dashboard" 
+                    active={activeItem === "Dashboard"}
+                    onClick={() => {
+                      console.log("Dashboard")
+                      setActiveItem("Dashboard")
+                      }
+                    }/>
+                  
+                  <MenuItem 
+                    icon={PlusIcon} 
+                    label="New Scan" 
+                    active={activeItem === "New Scan"}
+                    onClick={() => {
+                      console.log("New Scan")
+                      setActiveItem("New Scan")
+                      }}
+                    />
+                  
+                  <MenuItem 
+                    icon={ClockIcon} 
+                    label="History" 
+                    active = {activeItem === "History"}
+                    onClick={() => {
+                      console.log("History")
+                      setActiveItem("History");
+                      }}
+                    />
+          
+                  <MenuItem 
+                  icon={GearIcon} 
+                  label="Settings" 
+                  active={activeItem === "Settings"}
+                  onClick={() => {
+                    console.log("Settings");
+                    setActiveItem("Settings");
+                    }}
+                  />
+
+                  <MenuItem 
+                  icon={QuestionIcon} 
+                  label="Help" 
+                  active={activeItem === "Help"}
+                  onClick={() => {
+                    console.log("Help")
+                    setActiveItem("Help")
+                    }}
+                  />
                 </div>
               </div>
 
               {/* Logout */}
-              <div className="flex flex-col gap-1">
-                <MenuItem icon={ArrowLeftIcon} label="Logout" />
+              <div className="LeftCompLogout">
+                <MenuItem 
+                icon={ArrowLeftIcon} 
+                label="Logout" 
+                active={activeItem === "Logout"}
+                onClick={() => {
+                  console.log("Logout");
+                  setActiveItem("Logout");
+                }}
+              />
               </div>
             </div>
           </div>
 
           {/* ───────────────── Main Content ───────────────── */}
-          <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-            {/* Title */}
-            <div className="flex flex-wrap justify-between gap-3 p-4">
-              <p className="text-[#111418] tracking-light text-[32px] font-bold leading-tight min-w-72">
-                Detection Result
-              </p>
-            </div>
-
-            {/* Image */}
-            <div className="flex w-full grow bg-white @container p-4">
-              <div className="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-lg flex">
-                <div
-                  className="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
-                  style={{
-                    backgroundImage:
-                      'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcQ6N6WbdmgEbCRYYSWt4sanxlwU1YaxRCcVhj1BCeEMk4oayeg2y-Awye15Saf8yq89K5pFG1tfyzA-IVwi0phnW3DpgB5UDrZCBlC44NLAMaS_XxVGt6jZTNZa3j4T55AMaB2vsNKCywBFGXs_sbQ55HCvwcDq-Z761srwkNcbfa7Xv786wAiMvNq-c152l7NV2uURAhKvTz0MLa_iMCGVwbkqifpKXtO0hi3OUHDAXjnT-gvXlxe91kiQ-GIpMs6fQznUNuzQk")',
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Measurements */}
-            <SectionTitle>Measurements</SectionTitle>
-            <div className="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <Measurement label="Distance A" value="12.5 mm" />
-              <Measurement label="Distance B" value="8.2 mm" />
-              <Measurement label="Angle" value="35 degrees" />
-            </div>
-
-            {/* Analysis Summary */}
-            <SectionTitle>Analysis Summary</SectionTitle>
-            <p className="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              The AI model detected a fracture in the provided x-ray image. The fracture is located
-              in the distal radius, with a displacement of 12.5&nbsp;mm. Further evaluation by a
-              medical professional is recommended.
-            </p>
+          <div className="result-scroll-wrapper">
+            <FractureUploader/>
           </div>
         </div>
       </div>
@@ -84,20 +104,16 @@ export default function Detect() {
 /* ───────────────── Helper Components ───────────────── */
 
 // เมนูด้านข้าง
-function MenuItem({ icon: Icon, label, active }) {
+function MenuItem({ icon: Icon, label, active, onClick }) {
   return (
-    <div
-      className={`flex items-center gap-3 px-3 py-2 ${
-        active ? "bg-[#f0f2f5] rounded-lg" : ""
-      }`}
-    >
+    <div className= {`EachIconAndText ${active ? "active" : ""}`}  onClick={onClick} aria-current={active ? "page" : undefined}>
       <Icon />
-      <p className="text-[#111418] text-sm font-medium leading-normal">{label}</p>
+      <p className="TextUnderIcon">{label}</p>
     </div>
   );
 }
 
-// ไอคอน SVG (คัดมาจากต้นฉบับ)
+
 function HouseIcon() {
   return (
     <svg
@@ -105,6 +121,7 @@ function HouseIcon() {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      style={{ marginRight: "8px" }}
       fill="currentColor"
       viewBox="0 0 256 256"
     >
@@ -119,6 +136,7 @@ function PlusIcon() {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      style={{ marginRight: "8px" }}
       fill="currentColor"
       viewBox="0 0 256 256"
     >
@@ -133,6 +151,7 @@ function ClockIcon() {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      style={{ marginRight: "8px" }}
       fill="currentColor"
       viewBox="0 0 256 256"
     >
@@ -142,29 +161,27 @@ function ClockIcon() {
 }
 function GearIcon() {
   return (
-    <svg
-      className="text-[#111418]"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="currentColor"
-      viewBox="0 0 256 256"
-    >
-      <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Z" />
+    <svg xmlns="http://www.w3.org/2000/svg" 
+      width="24" 
+      height="24" 
+      style={{ marginRight: "8px" }}
+      viewBox="0 0 56 56">
+        <path fill="currentColor" 
+          fillRule="evenodd" d="M22.792 51.433a23.847 23.847 0 0 1-6.878-2.694l.124-2.425c.169-3.307-2.384-5.85-5.682-5.682l-2.68.137a23.871 23.871 0 0 1-2.854-6.517l2.104-1.9c2.458-2.218 2.452-5.822 0-8.035l-2.243-2.025A23.852 23.852 0 0 1 7.28 15.88l3.076.157c3.307.169 5.85-2.384 5.682-5.682L15.88 7.28a23.852 23.852 0 0 1 6.41-2.597l2.026 2.243c2.22 2.458 5.823 2.452 8.036 0l1.9-2.104a23.871 23.871 0 0 1 6.516 2.853l-.137 2.68c-.169 3.308 2.384 5.851 5.682 5.683l2.425-.124a23.847 23.847 0 0 1 2.694 6.878l-1.69 1.525c-2.457 2.22-2.45 5.823 0 8.036l1.561 1.408a23.864 23.864 0 0 1-2.958 6.975l-2.032-.104c-3.307-.169-5.85 2.384-5.682 5.682l.104 2.032a23.864 23.864 0 0 1-6.975 2.958l-1.408-1.56c-2.22-2.458-5.823-2.452-8.036 0zM28 38c5.523 0 10-4.477 10-10s-4.477-10-10-10s-10 4.477-10 10s4.477 10 10 10"
+        />
     </svg>
   );
 }
 function QuestionIcon() {
   return (
-    <svg
-      className="text-[#111418]"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="currentColor"
-      viewBox="0 0 256 256"
-    >
-      <path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Z" />
+    <svg xmlns="http://www.w3.org/2000/svg" 
+    width="22" 
+    height="22" 
+    style={{ marginRight: "10px", marginLeft: "1px"}}
+    viewBox="0 0 1024 1024">
+      <path 
+        fill="currentColor" d="M512 0C229.232 0 0 229.232 0 512c0 282.784 229.232 512 512 512c282.784 0 512.017-229.216 512.017-512C1024.017 229.232 794.785 0 512 0zm0 961.008c-247.024 0-448-201.984-448-449.01c0-247.024 200.976-448 448-448s448.017 200.977 448.017 448S759.025 961.009 512 961.009zm-47.056-160.529h80.512v-81.248h-80.512zm46.112-576.944c-46.88 0-85.503 12.64-115.839 37.889c-30.336 25.263-45.088 75.855-44.336 117.775l1.184 2.336h73.44c0-25.008 8.336-60.944 25.008-73.84c16.656-12.88 36.848-19.328 60.56-19.328c27.328 0 48.336 7.424 63.073 22.271c14.72 14.848 22.063 36.08 22.063 63.664c0 23.184-5.44 42.976-16.368 59.376c-10.96 16.4-29.328 39.841-55.088 70.322c-26.576 23.967-42.992 43.231-49.232 57.807c-6.256 14.592-9.504 40.768-9.744 78.512h76.96c0-23.68 1.503-41.136 4.496-52.336c2.975-11.184 11.504-23.823 25.568-37.888c30.224-29.152 54.496-57.664 72.88-85.551c18.336-27.857 27.52-58.593 27.52-92.193c0-46.88-14.176-83.408-42.577-109.568c-28.416-26.176-68.272-39.248-119.568-39.248z"
+        />
     </svg>
   );
 }
@@ -175,6 +192,7 @@ function ArrowLeftIcon() {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
+      style={{ marginRight: "8px" }}
       fill="currentColor"
       viewBox="0 0 256 256"
     >
