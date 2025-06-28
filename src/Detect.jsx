@@ -1,7 +1,7 @@
 import './Detect.css'
 import { useState } from 'react';
-
-
+import './components/FractureUploader.css'
+import { AnimatePresence, motion } from 'framer-motion';
 import ResultContainer from "./components/ResultContainer.jsx";
 import FractureUploader from "./components/FractureUploader.jsx";
 
@@ -14,9 +14,9 @@ export default function Detect() {
       style={{ fontFamily: 'Inter, "Noto Sans", sans-serif' }}
     >
       <div className="AllLayout">
-        <div className="AllComponent">
+        <div className="AllComponentDetect">
           {/* ───────────────── Sidebar ───────────────── */}
-          <div className="layout-content-container flex flex-col w-80">
+          
             <div className="LeftComp">
               {/* Header + Menu */}
               <div className="LeftCompNoLogout">
@@ -89,12 +89,14 @@ export default function Detect() {
               />
               </div>
             </div>
-          </div>
+          
 
           {/* ───────────────── Main Content ───────────────── */}
           <div className="result-scroll-wrapper">
-            <FractureUploader/>
+            {activeItem === "Dashboard" && <ResultContainer />}
+            {activeItem === "New Scan" && <FractureUploader />}
           </div>
+          
         </div>
       </div>
     </div>

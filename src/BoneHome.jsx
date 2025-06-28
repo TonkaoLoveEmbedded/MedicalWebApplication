@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Detect from './Detect'; // <--- สำคัญมาก
 import { useNavigate, Routes, Route } from 'react-router-dom';
 //import './App.css'
 import './BoneHome.css'
@@ -68,18 +65,20 @@ function BoneHome() {
                 }}
               >
                 <div className="HeaderInBg">
-                  <h1 className="TextDiscriptHeat" >
-                   Detect
-                  </h1>
-                  <h2 className="TextDiscriptHeat" >
-                    Bone Fractures
-                  </h2>
-                  <h1 className="TextDiscriptHeat">
-                    With AI
-                  </h1>
+                  <div className="HeaderInBgTxt">
+                    <h1 className="TextDiscriptHeat" >
+                    Detect
+                    </h1>
+                    <h2 className="TextDiscriptHeat" >
+                      Bone Fractures
+                    </h2>
+                    <h1 className="TextDiscriptHeat">
+                      With AI
+                    </h1>
+                  </div>
                   <h4 className="DiscriptionHeader" style={{ textIndent: '4em' }}>
                     Upload your x-ray images and let our advanced AI algorithms analyze them for potential
-                    fractures. Get results in seconds.
+                      ractures. Get results in seconds.
                   </h4>
                 </div>
                 <button className="UploadButtonContain">
@@ -172,7 +171,7 @@ function BoneHome() {
 
       <footer className="flex justify-center">
         <div className="SubTextCon">
-          <footer className="flex flex-col gap-6 px-5 py-10 text-center @container">
+          <footer className="FootCont">
             <div className="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
               <a className="text-[#60758a] text-base font-normal leading-normal min-w-40" href="#">
                 Terms of Service

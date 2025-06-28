@@ -3,10 +3,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 3%;
-    margin-right: 2%;
-    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
+
+.AllComponent{
+        font-family: "Inter","Noto Sans",sans-serif;
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        
+    }
 
 .HeadMenuSubButton{
     display: flex;
@@ -16,11 +25,13 @@
 .HeaderMenuSubLogoAndText{
     display: flex;
     flex-direction: row;
+   
 }
 .HeadMenuSubTextBot{
     display: flex;
     align-items: center;
 }
+
 .EachTextButtom{
     display: flex;
     margin-right: 8px;
@@ -36,6 +47,16 @@
 .ButtomUpAndLogBroder{
     display: flex;
     flex-direction: row;
+}
+.BottomContainer{
+    display: flex;
+    margin: 30px 0;
+}
+.UnderComp{
+    display: flex;
+    margin: 30px 0;
+    flex-direction: column;
+    align-items: center;
 }
 .ContainerIm{
     display: flex;
@@ -83,7 +104,19 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
+    padding-left: 4vw;
+    padding-right: 3vw;
+    margin-top: 50px;
+    margin-bottom: 30px;
     color: white !important;
+}
+.HeaderInBgTxt{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    padding: none;
+    margin-bottom: 20px;
 }
 
 .AboutUs{
@@ -97,7 +130,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 0vh;
+    margin-left: 0vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
 
 .ButtomComp{
@@ -112,13 +147,23 @@
         display: flex;
         flex-direction: row;
         margin: 10px;
+        margin-left: 2vw;
     }
+
+.FootCont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding-bottom: 20px;
+}
 @media screen and (max-width: 768px){
 
     .AllComponent{
         font-family: "Inter","Noto Sans",sans-serif;
         display: flex;
         flex-direction: column;
+        width: 100vw;
         
     }
     
@@ -156,10 +201,15 @@
     .HeadMenuSubTextBot{
         display: none;
     }
+    .HeaderMenuSubLogoAndText{
+        display: flex;
+        flex-direction: row;
+        margin-left: 8vw;
+    }
     .HeadMenu{
         display: flex;
         align-content: center;
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 0px;
     }
     .AboutUs{
@@ -179,6 +229,12 @@
         align-items: start;
         padding-bottom: 20px;
     }
+    .HeaderInBgTxt{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-left: 5vw;
+    }
     .SubCon{
         
         padding: 20px;
@@ -191,6 +247,7 @@
     }
     .BottomContainer{
         max-width: 95vw;
+        margin: 0px;
     }
     .ContainerIm{
         display: flex;
@@ -202,6 +259,14 @@
     .UploadButtonContain{
         margin-bottom: 10px;
     }
+    .FootCont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        padding-bottom: 20px;
+    }
+
 }
 .ButtomCompSub{
     border: 1px solid ;
@@ -218,11 +283,7 @@
   transition: transform 0.5s ease; /* ทำให้มันขยายแบบนุ่มนวล */
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
-.UnderComp{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .GetStartButton{
     display: flex;
