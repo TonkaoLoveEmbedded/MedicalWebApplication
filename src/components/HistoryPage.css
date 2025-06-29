@@ -1,0 +1,122 @@
+/* ---------- Content ---------- */
+.content-header{
+    margin: 25px 5px;
+}
+.content-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+.table-wrapper {
+  padding: 0 1rem 1rem;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border: 1px solid ;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.history-table th  
+
+.history-table td {
+  color: #60758a;
+  border-top: 1px solid #dbe0e6;
+}
+
+/* ---------- Specific columns ---------- */
+.col-id{
+    width: auto;
+}
+.col-date,
+.col-time
+{
+  min-width: 80px
+}
+
+.col-result{
+    min-width: 200px;
+}
+.col-image {
+  width: 56px;
+}
+
+th.col-action,
+td.col-action,
+th.col-image,
+td.col-image,
+th.col-time,
+td.col-time {
+  text-align: center;
+  vertical-align: middle;
+}
+thead tr {
+  border-bottom: 2px solid #dbe0e6; /* หรือเลือกสีเทาอ่อนที่เหมาะ */
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 2px color(srgb rgb(49, 49, 49) green blue);
+  border-radius: 9999px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+/* ---------- Responsive (hide columns on small widths) ---------- */
+@media (max-width: 768px) {
+  .col-result {
+    display: none;
+  }
+  .table-wrapper {
+        padding: 0 1rem 1rem;
+        overflow-x: auto;
+        margin-left: 15px;
+        }
+    .content-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-left: 40px;
+        }
+}
+
+@media (max-width: 540px) {
+    .col-image {
+        display: none;
+    }
+    .table-wrapper {
+        padding: 0 1rem 1rem;
+        overflow-x: auto;
+        margin-left: 15px;
+    }
+    .content-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 420px) {
+  .col-time {
+    display: none;
+  }
+  .table-wrapper {
+  padding: 0 1rem 1rem;
+  overflow-x: auto;
+  margin-left: 20px;
+}
+    .content-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-left: 40px;
+    }
+}

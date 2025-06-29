@@ -40,6 +40,7 @@ html, body, #root {
     width: 220px;
     height: 100vh;
     padding-left: 50px;
+    margin-top: 5px;
 }
 
 .LeftCompLogout{
@@ -49,7 +50,11 @@ html, body, #root {
     padding: 0px 8px;
     margin-bottom: 30px;
 }
-
+.SlideTextLogo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .ItemLeftBar{
     display: inline-flex;
     flex-direction: column;
@@ -169,4 +174,45 @@ html, body, #root {
   font-weight: 400;
   line-height: 1.5;
   padding: 0.25rem 1rem 0.75rem 1rem;
+}
+
+@media screen and (max-width: 768px){
+  .TextAfterLogo{
+    display: none;
+  }
+  .SlideTextLogo{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 8px;
+  }
+  .TextUnderIcon{
+    display: none;
+  }
+  .LeftComp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    max-height: 100vh;
+    padding-left: 20px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  .LeftCompLogout{
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    padding: 0px 0px;
+    margin-bottom: 50px;
+  }
+  .EachIconAndText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 18px;
+    padding-right: 0px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-radius: 8px;
+  }
 }

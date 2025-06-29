@@ -3,9 +3,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5%;
+    margin-left: 50px;
     margin-right: 5%;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 50px;
 }
 
@@ -124,6 +124,7 @@
     flex-direction: column;
     align-items: center;
     padding-left: 10vh;
+    margin-top: 30px;
 }
 
 .AboutUsHowWork{

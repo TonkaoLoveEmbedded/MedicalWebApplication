@@ -4,7 +4,7 @@ import './components/FractureUploader.css'
 import { AnimatePresence, motion } from 'framer-motion';
 import ResultContainer from "./components/ResultContainer.jsx";
 import FractureUploader from "./components/FractureUploader.jsx";
-
+import HistoryPage from "./components/HistoryPage.jsx";
 
 export default function Detect() {
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -20,8 +20,17 @@ export default function Detect() {
             <div className="LeftComp">
               {/* Header + Menu */}
               <div className="LeftCompNoLogout">
-                <h2 className="text-[#111418] text-base font-medium leading-normal">Fracture Finder</h2>
-
+                <div className="SlideTextLogo">
+                <svg viewBox="0 0 48 48" width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight:"2px"}}>
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <h2 className="TextAfterLogo">Fracture Finder</h2>
+                </div>
                 <div className="ItemLeftBar">
                   
                   <MenuItem 
@@ -95,6 +104,7 @@ export default function Detect() {
           <div className="result-scroll-wrapper">
             {activeItem === "Dashboard" && <ResultContainer />}
             {activeItem === "New Scan" && <FractureUploader />}
+            {activeItem === "History" && <HistoryPage/>}
           </div>
           
         </div>

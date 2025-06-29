@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useNavigate, Routes, Route } from 'react-router-dom';
-//import './App.css'
 import './BoneHome.css'
 function BoneHome() {
   const [count, setCount] = useState(0)
